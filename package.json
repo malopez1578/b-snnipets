@@ -1,0 +1,20 @@
+{
+    "name": "b-snnipets",
+    "displayName": "B snnipets",
+    "description": "snnipets varios de uso diario",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "pug",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}

@@ -1,0 +1,73 @@
+{
+  "template basico pug": {
+    "prefix": "b-e",
+    "body": [
+      "//- ============================== Mixins\ninclude ../../../../_pug/_mixin\n//- ============================== templateContainer\n|\n|\nsection(class='template-wrapper act_')\n\taside(class = 'template-asideLeft o-aside-Item  u-animationFadeDown')\n\t|\n\tdiv(class='template-section m-a')\n\t\tsection(class='template-content u-animationFadeDown')\n\t\t\tdiv(class='u-intructionActivity'): h6\n\t\t\t.row\n\t|\n\taside(class='template-asideRight o-aside-Item')\n\t\tbutton(class='c-btn-IconAction u-bgIconRefresh') \n\t\tbutton(class='c-btn-IconAction u-bgIconCheck')\n"
+    ],
+    "description": "crea una pagina basica"
+  },
+  "template con tabs": {
+    "prefix": "b-tab",
+    "body": [
+      "//- ============================== Mixins\ninclude ../../../../_pug/_mixin\n// ============================== templateContainer\n|\n|\nsection(class='template-wrapper act_' ng-init='s_actividad = 1')\n\taside(class='template-asideLeft o-aside-Item  u-animationFadeDown')\n\t\tbutton(class='c-btn-IconAction' data-activities-count='1' ng-click='s_actividad = 1' ng-class=\"(s_actividad == 1) ? 'is-active' : '';\")\n\t\tbutton(class='c-btn-IconAction' data-activities-count='2' ng-click='s_actividad = 2' ng-class=\"(s_actividad == 2) ? 'is-active' : '';\")\n\t|\n\t|\n\tdiv(class='template-section m-a')\n\t\tsection(class='template-content u-animationFadeDown' ng-show='s_actividad == 1')\n\t\t\tdiv(class='u-intructionActivity'): h6\n\t\t\t.row\n\n\t\tsection(class='template-content u-animationFadeDown' ng-show='s_actividad == 2')\n\t\t\tdiv(class='u-intructionActivity'): h6\n\t\t\t.row\n\n\t\t\n\t|\n\taside(class='template-asideRight o-aside-Item')\n\t\tbutton(class='c-btn-IconAction u-bgIconRefresh') \n\t\tbutton(class='c-btn-IconAction u-bgIconCheck')\n"
+    ],
+    "description": "crea una pagina con secciones"
+  },
+  "template con notice and tab": {
+    "prefix": "b-tab_notice",
+    "body": [
+      "//- ============================== Mixins\ninclude ../../../../_pug/_mixin\n// ============================== templateContainer\n|\n|\nsection(class='template-wrapper act_' ng-init='s_actividad = 1')\n\taside(class='template-asideLeft o-aside-Item  u-animationFadeDown')\n\t\tbutton(class='c-btn-IconAction' data-activities-count='1' ng-click='s_actividad = 1' ng-class=\"(s_actividad == 1) ? 'is-active' : '';\")\n\t\tbutton(class='c-btn-IconAction' data-activities-count='2' ng-click='s_actividad = 2' ng-class=\"(s_actividad == 2) ? 'is-active' : '';\")\n\t|\n\t|\n\tdiv(class='template-section m-a')\n\t\tsection(class='template-content u-animationFadeDown' ng-show='s_actividad == 1')\n\t\t\tdiv(class='u-intructionActivity'): h6\n\t\t\t.row\n\t\tsection(class='template-content u-animationFadeDown' ng-show='s_actividad == 2')\n\t\t\tdiv(class='u-intructionActivity'): h6\n\t\t\t.row\n\t\t\n\t|\n\taside(class='template-asideRight o-aside-Item')\n\t\tbutton(class='c-btn-IconAction openNotice is-active u-bgIconAlert' ng-click='idNotice = 1')\n\t\tbutton(class='c-btn-IconAction u-bgIconRefresh')\n\t\tbutton(class='c-btn-IconAction u-bgIconCheck')\n\n|\n\tdiv(class=\"c-noticeAside\" id=\"notice\")\n    article(class=\"c-noticeAside-body\" ng-include=\"'unit_1/module_1/activities/a1m1a-af_notice_'+ idNotice + '\"+pug_extend_output+\"'\")\n\tfooter(class=\"c-noticeAside-footer\"): button(class=\"c-btn-IconAction u-bgIconClose closeNotice\")\n"
+    ],
+    "description": "crea una pagina con secciones y notice"
+  },
+  "template con notice": {
+    "prefix": "b-e_notice",
+    "body": [
+      "//- ============================== Mixins\ninclude ../../../../_pug/_mixin\n// ============================== templateContainer\n|\n|\nsection(class='template-wrapper act_')\n\taside(class='template-asideLeft o-aside-Item  u-animationFadeDown')\n\t|\n\t|\n\tdiv(class='template-section m-a')\n\t\tsection(class='template-content u-animationFadeDown')\n\t\t\tdiv(class='u-intructionActivity'): h6\n\t\t\t.row\n\t|\n\taside(class='template-asideRight o-aside-Item')\n\t\tbutton(class='c-btn-IconAction openNotice is-active u-bgIconAlert' ng-click='idNotice = 1')\n\t\tbutton(class='c-btn-IconAction u-bgIconRefresh')\n\t\tbutton(class='c-btn-IconAction u-bgIconCheck')\n\n|\n\tdiv(class=\"c-noticeAside\" id=\"notice\")\n    article(class=\"c-noticeAside-body\" ng-include=\"'unit_1/module_1/activities/a1m1a-af_notice_'+ idNotice + '\"+pug_extend_output+\"'\")\n\tfooter(class=\"c-noticeAside-footer\"): button(class=\"c-btn-IconAction u-bgIconClose closeNotice\")\n"
+    ],
+    "description": "crea una pagina con notice"
+  },
+  "template notice": {
+    "prefix": "b-notice",
+    "body": [
+      "include ../../../../_pug/_mixin\n// ============================== templateContainer\ndiv.vh100.row-flex\n\tdiv(class='row ml40 m-a')\n\t\theader(class='c-noticeAside-header')\n\t\t\tdiv(class='row mt40')\n\t\t\t\timg(src=''+appPathImage+'c_noticeTitle.png', alt='', class='u-responsive-img w70')\n\t\tsection(class='c-noticeAside-section mt20')\n\t\t\tdiv(class='row')\n"
+    ],
+    "description": "crea una pagina de notice"
+  },
+  "template Recorder": {
+    "prefix": "b-recorder",
+    "body": [
+      "div(class=\"row mt30\"): +aeRecorder('a1m1a-aa', 1, 60)\n\n\t+libScripts([\"audios/audio-recorder-safari.js\"])\n"
+    ],
+    "description": "template de recorder"
+  },
+  "template Image": {
+    "prefix": "b-img",
+    "body": ["+image(2, 5, '_img_1.png')\n"],
+    "description": "template de imagen"
+  },
+  "template Video": {
+    "prefix": "b-vid",
+    "body": ["+video(2, 5, '_vid_1').centrado\n"],
+    "description": "template de video"
+  },
+  "template Audio": {
+    "prefix": "b-aud",
+    "body": ["+audio(2, 5, '_aud_1').centrado\n"],
+    "description": "template de audio"
+  },
+  "template selfcheck": {
+    "prefix": "b-pug-self",
+    "body": [
+      "+tableSelfReview(\"LANGUAGE\", \n\t  [ \n\t\t\t{ \n\t\t\t\t title: '', \n\t\t\t\t options: [ \n\t\t\t\t\t  {value: ''},\n\t\t\t\t\t  {value: ''},\n\t\t\t\t\t  {value: ''},\n\t\t\t\t\t  {value: ''}\n\t\t\t\t ]\n\t\t\t}\n\t  ]\n )(table-width=\"self\") \n"
+    ],
+    "description": "template de tabla de selfcheck"
+  },
+  "template gameClone": {
+    "prefix": "b-pug-clone",
+    "body": [
+      "\n\t-var arrRandom = [1, 2, 3, 4, 5]\n\t- arrRandom.sort((a,b)=>{return Math.random()-0.5})\n\tul.game-mapSearch.c-gallery\n\t\teach item, index in arrRandom\n\t\t\tli.c-gallery-item.js-sendImage\n\t\t\t\t+image(3,9,'a1m9a-an_img_'+(index+1)+'.png')(class=\"game-mapSearch-image c-gallery-image\" img-pareja='0' alt=arrAlt[item])"
+    ],
+    "description": "template de random modal de clon"
+  }
+}
