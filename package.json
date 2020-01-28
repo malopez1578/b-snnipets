@@ -2,7 +2,7 @@
   "name": "b-snnipets",
   "displayName": "B snnipets",
   "description": "snnipets varios de uso diario",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "malopez1578",
   "engines": {
     "vscode": "^1.41.0"
@@ -10,6 +10,7 @@
   "categories": [
     "Snippets"
   ],
+  "icon": "logo.png",
   "repository": "https://github.com/malopez1578/b-snnipets.git",
   "contributes": {
     "snippets": [
