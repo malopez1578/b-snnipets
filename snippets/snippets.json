@@ -69,5 +69,27 @@
       "\n\t-var arrRandom = [1, 2, 3, 4, 5]\n\t- arrRandom.sort((a,b)=>{return Math.random()-0.5})\n\tul.game-mapSearch.c-gallery\n\t\teach item, index in arrRandom\n\t\t\tli.c-gallery-item.js-sendImage\n\t\t\t\t+image(3,9,'a1m9a-an_img_'+(index+1)+'.png')(class=\"game-mapSearch-image c-gallery-image\" img-pareja='0' alt=arrAlt[item])"
     ],
     "description": "template de random modal de clon"
+  },
+  "template libScripts": {
+    "prefix": "b-libScripts",
+    "body": ["|\n+libScripts([\"${fileRoute}\"])\n"],
+    "description": "mixin para agregar librerias js"
+  },
+  "template libStyles": {
+    "prefix": "b-libStyles",
+    "body": ["|\n+libStyles([\"${fileRoute}\"])\n"],
+    "description": "mixin para agregar librerias css"
+  },
+  "template noticeModal": {
+    "prefix": "b-noticeModal",
+    "body": ["|\n+noticeModal(${level}, ${module}, ${template})"],
+    "description": "template de mixin del notice"
+  },
+  "template random function": {
+    "prefix": "b-random",
+    "body": [
+      "\n-var arrRandom = [1, 2, 3, 4, 5]\n- arrRandom.sort((a,b)=>{return Math.random()-0.5})\neach item, index in arrRandom\n\t"
+    ],
+    "description": "template de random"
   }
 }

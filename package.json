@@ -2,7 +2,7 @@
   "name": "b-snnipets",
   "displayName": "B snnipets",
   "description": "snnipets varios de uso diario",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "publisher": "malopez1578",
   "engines": {
     "vscode": "^1.41.0"
@@ -14,7 +14,7 @@
   "contributes": {
     "snippets": [
       {
-        "language": "pug",
+        "language": "jade",
         "path": "./snippets/snippets.json"
       }
     ]
