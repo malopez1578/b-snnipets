@@ -19,5 +19,7 @@ This is a extension for projects in pug
 - "b-libStyles": mixin para agregar librerias css,
 - "b-noticeModal": template de mixin del notice,
 - "b-random: template de random"
+- "b-drags": template de crear drags
+- "b-flickity": template de flickity
 
 **Enjoy!**
