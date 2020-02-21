@@ -100,8 +100,8 @@
   "template flickity": {
     "prefix": "b-flickity",
     "body": [
-      "\n+flickityBase\n+flickityControls(${cantSlides})\ndiv(class=\"c-flickity__cell\"): .row\n\t",
-      "|\nscript.\nfn_flickity_init();\n\t"
+      "\n+flickityBase\n\t+flickityControls(${cantSlides})\n\tdiv(class=\"c-flickity__cell\"): .row\n\t",
+      "|\nscript.\n\tfn_flickity_init();\n\t"
     ],
     "description": "template de flickity"
   }
