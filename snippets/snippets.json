@@ -104,5 +104,17 @@
       "|\nscript.\n\tfn_flickity_init();\n\t"
     ],
     "description": "template de flickity"
+  },
+  "template cardColors": {
+    "prefix": "b-cardColors",
+    "body": ["\n.c-cardColors\n\t.c-cardColorsContent\n\t\t${contentCard}\n"],
+    "description": "template de cardColors"
+  },
+  "template table": {
+    "prefix": "b-table",
+    "body": [
+      "\ntable.c-table(table-type=\"${tableStyle}\")\n\tthead\n\t\ttr\n\t\t\tth\n\ttbody\n\t\ttr\n\t\t\ttd\n"
+    ],
+    "description": "template de tablas"
   }
 }

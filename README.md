@@ -21,5 +21,7 @@ This is a extension for projects in pug
 - "b-random: template de random"
 - "b-drags": template de crear drags
 - "b-flickity": template de flickity
+- "b-cardColors": template de cardColors
+- "b-table": template de tablas
 
 **Enjoy!**
