@@ -116,5 +116,15 @@
       "\ntable.c-table(table-type=\"${tableStyle}\")\n\tthead\n\t\ttr\n\t\t\tth\n\ttbody\n\t\ttr\n\t\t\ttd\n"
     ],
     "description": "template de tablas"
+  },
+  "template Game Styles": {
+    "prefix": "b-gameStyle",
+    "body": ["\n+gameStyles([\"${urlStyle}\"])"],
+    "description": "template de url de estilo de juegos"
+  },
+  "template Game Script": {
+    "prefix": "b-gameScript",
+    "body": ["\n+gameScripts([\"${urlScript}\"])"],
+    "description": "template de url de estilo de juegos"
   }
 }
