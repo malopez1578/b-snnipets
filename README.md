@@ -4,10 +4,6 @@ This is a extension for projects in pug
 
 ## snnipets actualmente funcionando
 
-- "b-e": crea una pagina basica,
-- "b-tab": crea una pagina con secciones,
-- "b-tab_notice": crea una pagina con secciones y notice,
-- "b-e_notice": crea una pagina con notice,
 - "b-notice": crea una pagina de notice,
 - "b-recorder": template de recorder,
 - "b-img": template de imagen,

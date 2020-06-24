@@ -2,7 +2,7 @@
   "name": "b-snnipets",
   "displayName": "B snnipets",
   "description": "snnipets varios de uso diario",
-  "version": "0.0.8",
+  "version": "1.0.2",
   "publisher": "malopez1578",
   "engines": {
     "vscode": "^1.41.0"
