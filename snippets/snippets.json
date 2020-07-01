@@ -2,7 +2,7 @@
   "template notice": {
     "prefix": "b-notice",
     "body": [
-      "include ../../../../_pug/_mixin\n// ============================== templateContainer\ndiv.vh100.row-flex\n\tdiv(class='row ml40 m-a')\n\t\theader(class='c-noticeAside-header')\n\t\t\tdiv(class='row mt40')\n\t\t\t\timg(src=''+appPathImage+'c_noticeTitle.png', alt='', class='u-responsive-img w70')\n\t\tsection(class='c-noticeAside-section mt20')\n\t\t\tdiv(class='row')\n"
+      "\ninclude ./../../../../../../src/templates/_mixin\n  div.vh100.row-flex\n\tdiv(class=\"row ml40 m-a\")\n\t\t+noticeModalHeader\n\t\t+noticeModalSection"
     ],
     "description": "crea una pagina de notice"
   },
@@ -38,9 +38,9 @@
   "template gameClone": {
     "prefix": "b-pug-clone",
     "body": [
-      "\n\t-var arrRandom = [1, 2, 3, 4, 5]\n\t- arrRandom.sort((a,b)=>{return Math.random()-0.5})\n\tul.game-mapSearch.c-gallery\n\t\teach item, index in arrRandom\n\t\t\tli.c-gallery-item.js-sendImage\n\t\t\t\t+image(3,9,'a1m9a-an_img_'+(index+1)+'.png')(class=\"game-mapSearch-image c-gallery-image\" img-pareja='0' alt=arrAlt[item])"
+      "\n-var arrWords = []\n-var url = \"${unit}/${module}/\"+namePage\n-var contentId = \"${idContent}\"\n-var modalId = \"${idModal}\"\n+gameClone({ arrWords, contentId })\n+gameCloneModal({arrWords , modalId, url}))"
     ],
-    "description": "template de random modal de clon"
+    "description": "template de gameClone"
   },
   "template libScripts": {
     "prefix": "b-libScripts",
@@ -54,7 +54,9 @@
   },
   "template noticeModal": {
     "prefix": "b-noticeModal",
-    "body": ["+noticeModal(${level}, ${module}, ${template})"],
+    "body": [
+      "\n\t\tbutton(class=\"c-btn-IconAction openNotice is-active u-bgIconAlert\" ng-click=\"idNotice = 1\" )\n+noticeModal(${level}, ${module}, ${template})"
+    ],
     "description": "template de mixin del notice"
   },
   "template random function": {

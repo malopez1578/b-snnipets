@@ -10,9 +10,11 @@ This is a extension for projects in pug
 - "b-vid": template de video,
 - "b-aud": template de audio,
 - "b-pug-self": template de tabla de selfcheck,
-- "b-pug-clone": template de random modal de clon,
+- "b-pug-clone": template de gameclone,
 - "b-libScripts": mixin para agregar librerias js,
 - "b-libStyles": mixin para agregar librerias css,
+- "b-gameScripts": mixin para agregar juegos js,
+- "b-gameStyles": mixin para agregar juegos css,
 - "b-noticeModal": template de mixin del notice,
 - "b-random: template de random"
 - "b-drags": template de crear drags
