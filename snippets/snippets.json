@@ -38,7 +38,7 @@
   "template gameClone": {
     "prefix": "b-pug-clone",
     "body": [
-      "\n-var arrWords = []\n-var url = \"${unit}/${module}/\"+namePage\n-var contentId = \"${idContent}\"\n-var modalId = \"${idModal}\"\n+gameClone({ arrWords, contentId })\n+gameCloneModal({arrWords , modalId, url}))"
+      "\n-var arrWords = []\n-var url = \"${unit}/${module}/\"+namePage\n-var contentId = \"${miContenido}\"\n-var modalId = \"${miModal}\"\n+gameClone({ arrWords, contentId })\n+gameCloneModal({arrWords , modalId, url}))\nscript.\n    fn_flickity_init();\n\t$(document).ready(function(){\n\t\t$('#${miModal}').modal();\n\t});\n\tfun_cloneImage( document.getElementById('${miModal}'), document.getElementById('${miContenido}'));\n"
     ],
     "description": "template de gameClone"
   },
