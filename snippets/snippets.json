@@ -1,104 +1,191 @@
 {
-  "template notice": {
-    "prefix": "b-notice",
-    "body": [
-      "\ninclude ./../../../../../../src/templates/_mixin\n  div.vh100.row-flex\n\tdiv(class=\"row ml40 m-a\")\n\t\t+noticeModalHeader\n\t\t+noticeModalSection"
-    ],
-    "description": "crea una pagina de notice"
-  },
-  "template Recorder": {
+  "Recorder": {
     "prefix": "b-recorder",
     "body": [
       "div(class=\"row mt30\"): +aeRecorder('a1m1a-aa', 1, 60)\n\n\t+libScripts([\"audios/audio-recorder-safari.js\"])\n"
     ],
-    "description": "template de recorder"
+    "description": "recorder"
   },
-  "template Image": {
+  "Image": {
     "prefix": "b-img",
     "body": ["+image(${unit}, ${module}, namePage+'_img_1.png')\n"],
-    "description": "template de imagen"
+    "description": "imagen"
   },
-  "template Video": {
+  "Video": {
     "prefix": "b-vid",
     "body": ["+video(${unit}, ${module}, namePage+'_vid_1').centrado\n"],
-    "description": "template de video"
+    "description": "video"
   },
-  "template Audio": {
+  "Audio": {
     "prefix": "b-aud",
     "body": ["+audio(${unit}, ${module}, namePage+'_aud_1').centrado\n"],
-    "description": "template de audio"
+    "description": "audio"
   },
-  "template selfcheck": {
-    "prefix": "b-pug-self",
-    "body": [
-      "+tableSelfReview(\"LANGUAGE\", \n\t  [ \n\t\t\t{ \n\t\t\t\t title: '', \n\t\t\t\t options: [ \n\t\t\t\t\t  {value: ''},\n\t\t\t\t\t  {value: ''},\n\t\t\t\t\t  {value: ''},\n\t\t\t\t\t  {value: ''}\n\t\t\t\t ]\n\t\t\t}\n\t  ]\n )(table-width=\"sm\") \n"
-    ],
-    "description": "template de tabla de selfcheck"
+  "AudioBtn": {
+    "prefix": "b-aud-btn",
+    "body": ["+audioBtn(${unit}, ${module}, namePage+'_aud_1').centrado\n"],
+    "description": "audio button"
   },
-  "template gameClone": {
-    "prefix": "b-pug-clone",
-    "body": [
-      "\n-var arrWords = []\n-var url = \"${unit}/${module}/\"+namePage\n-var contentId = \"${miContenido}\"\n-var modalId = \"${miModal}\"\n+gameClone({ arrWords, contentId })\n+gameCloneModal({arrWords , modalId, url}))\nscript.\n    fn_flickity_init();\n\t$(document).ready(function(){\n\t\t$('#${miModal}').modal();\n\t});\n\tfun_cloneImage( document.getElementById('${miModal}'), document.getElementById('${miContenido}'));\n"
-    ],
-    "description": "template de gameClone"
-  },
-  "template libScripts": {
-    "prefix": "b-libScripts",
-    "body": ["|\n+libScripts([\"${fileRoute}\"])\n"],
-    "description": "mixin para agregar librerias js"
-  },
-  "template libStyles": {
-    "prefix": "b-libStyles",
-    "body": ["|\n+libStyles([\"${fileRoute}\"])\n"],
-    "description": "mixin para agregar librerias css"
-  },
-  "template noticeModal": {
-    "prefix": "b-noticeModal",
-    "body": [
-      "\n\t\tbutton(class=\"c-btn-IconAction openNotice is-active u-bgIconAlert\" ng-click=\"idNotice = 1\" )\n+noticeModal(${level}, ${module}, ${template})"
-    ],
-    "description": "template de mixin del notice"
-  },
-  "template random function": {
+  "random function": {
     "prefix": "b-random",
     "body": [
       "\n-var arrRandom = [1, 2, 3, 4, 5]\n- arrRandom.sort((a,b)=>{return Math.random()-0.5})\neach item, index in arrRandom\n\t"
     ],
-    "description": "template de random"
+    "description": "random"
   },
-  "template create drags": {
+  "create drags": {
     "prefix": "b-drags",
     "body": ["\n+eachDrag(${arrDrags})\n\t"],
-    "description": "template de crear drags"
+    "description": "crear drags"
   },
-  "template flickity": {
+  "flickity": {
     "prefix": "b-flickity",
     "body": [
       "\n+flickityBase\n\t+flickityControls(${cantSlides})\n\t\tdiv(class=\"c-flickity__cell\"): .row\n\t",
       "|\nscript.\n\tfn_flickity_init();\n\t"
     ],
-    "description": "template de flickity"
+    "description": "flickity"
   },
-  "template cardColors": {
-    "prefix": "b-cardColors",
-    "body": ["\n.c-cardColors\n\t.c-cardColorsContent\n\t\t${contentCard}\n"],
-    "description": "template de cardColors"
-  },
-  "template table": {
-    "prefix": "b-table",
-    "body": [
-      "\ntable.c-table(table-type=\"${tableStyle}\")\n\tthead\n\t\ttr\n\t\t\tth\n\ttbody\n\t\ttr\n\t\t\ttd\n"
-    ],
-    "description": "template de tablas"
-  },
-  "template Game Styles": {
+  "Game Styles": {
     "prefix": "b-gameStyle",
     "body": ["\n+gameStyles([\"${urlStyle}\"])"],
-    "description": "template de url de estilo de juegos"
+    "description": "url de estilo de juegos"
   },
-  "template Game Script": {
+  "Game Script": {
     "prefix": "b-gameScript",
     "body": ["\n+gameScripts([\"${urlScript}\"])"],
-    "description": "template de url de estilo de juegos"
+    "description": "url de estilo de juegos"
+  },
+  "libScripts": {
+    "prefix": "b-libScripts",
+    "body": ["|\n+libScripts([\"${fileRoute}\"])\n"],
+    "description": "mixin para agregar librerias js"
+  },
+  "libStyles": {
+    "prefix": "b-libStyles",
+    "body": ["|\n+libStyles([\"${fileRoute}\"])\n"],
+    "description": "mixin para agregar librerias css"
+  },
+  "notice": {
+    "prefix": "b-notice",
+    "body": [
+      "\ninclude ./../../../../../../src//_mixin\n  div.vh100.row-flex\n\tdiv(class=\"row ml40 m-a\")\n\t\t+noticeModalHeader\n\t\t+noticeModalSection"
+    ],
+    "description": "crea una pagina de notice"
+  },
+  "noticeModal": {
+    "prefix": "b-noticeModal",
+    "body": [
+      "\n\t\tbutton(class=\"c-btn-IconAction openNotice is-active u-bgIconAlert\" ng-click=\"idNotice = 1\" )\n+noticeModal(${level}, ${module}, ${)"
+    ],
+    "description": "mixin del notice"
+  },
+  "cardColors": {
+    "prefix": "b-cardColors",
+    "body": ["\n.c-cardColors\n\t.c-cardColorsContent\n\t\t${contentCard}\n"],
+    "description": "cardColors"
+  },
+  "selfcheck": {
+    "prefix": "b-pug-self",
+    "body": [
+      "+tableSelfReview(\"LANGUAGE\", \n\t  [ \n\t\t\t{ \n\t\t\t\t title: '', \n\t\t\t\t options: [ \n\t\t\t\t\t  {value: ''},\n\t\t\t\t\t  {value: ''},\n\t\t\t\t\t  {value: ''},\n\t\t\t\t\t  {value: ''}\n\t\t\t\t ]\n\t\t\t}\n\t  ]\n )(table-width=\"sm\") \n"
+    ],
+    "description": "tabla de selfcheck"
+  },
+  "counterWords":{
+    "prefix":"b-counter-words",
+    "body": [
+      "\n+aeCounterWords(\"ngCounter_1\", 100, {feature: \"min\"})\n"
+    ]
+  },
+  "cloneImg":{
+    "prefix":"b-clone-img",
+    "body": [
+      "\n+aecloneImageCtx({id: \"cloneCtx\", size: \"160px\", layout: \"flex\"})\n\t+aecloneImageItem: +aecloneImageFigure({caption: true}): span Word\n#modalScope_2.modal.fade.bs-example-modal-lg\n  .modal-dialog.modal-lg\n\t.modal-content\n\t\tspan.close.modal-close(data-dismiss='modal', aria-label='Close')\n\t\t\tspan(aria-hidden='true') x\n\t\tsection\n\t\t\t+aecloneImageCtx({id: \"cloneModalCtx\", layout: \"flex\", size: \"190px\"})\n\t\t\t\t+aecloneImageItem({onModal: true})\n\t\t\t\t\t+aecloneImageFigure({onModal: true, url: {unit: ${unit}, module: ${module}, name: namePage+'_img_3.png'}})(img-pareja='0' alt='')\nscript.\n\t$(document).ready(function(){\n\t\t$('#modalScope_2').modal();\n\t});\n\tfun_cloneImage( document.getElementById(\"cloneModalCtx\"), document.getElementById(\"cloneCtx\") );\n"
+    ]
+  },
+  "table":{
+    "prefix":"b-table",
+    "body": [
+      "\n+aeTable({columns: \"repeat(4, 1fr)\"})\n"
+    ]
+  },
+  "table-head":{
+    "prefix":"b-table-head",
+    "body": [
+      "\n+aeTableHeader({columns: \"repeat(2, 1fr)\"})\n"
+    ]
+  },
+  "table-row":{
+    "prefix":"b-table-row",
+    "body": [
+      "+aeTableRow"
+    ]
+  },
+  "table-cell":{
+    "prefix":"b-table-cell",
+    "body": [
+      "+aeTableCell word"
+    ]
+  },
+  "table-block":{
+    "prefix":"b-table-block",
+    "body": [
+      "\n+aeTableBlock({columns: \"repeat(2, 1fr)\"})\n"
+    ]
+  },
+  "table-example":{
+    "prefix":"b-table-example",
+    "body": [
+      "\n+aeTable({columns: \"repeat(4, 1fr)\"})\n  +aeTableHeader({columns: \"repeat(2, 1fr)\"})\n\t+aeTableCell xxxx\n\t+aeTableCell xxxx\n  +aeTableRow\n\t+aeTableCell xxxx\n\t+aeTableCell xxxx\n\t+aeTableCell xxxx\n\t+aeTableCell xxxx\n  +aeTableRow({columns: \"repeat(2, 1fr)\"})\n\t+aeTableBlock({columns: \"repeat(2, 1fr)\"})\n\t\t+aeTableCell xxxxx\n\t\t+aeTableCell xxxxx\n\t\t+aeTableCell xxxxx\n\t\t+aeTableCell xxxxx\n\t\t+aeTableCell xxxxx\n\t\t+aeTableCell xxxxx\n\t+aeTableBlock({columns: \"repeat(2, 1fr)\"})\n\t\t+aeTableCell(class=\"row-flex justify-center align-items-center\") xxxx\n\t\t+aeTableCell(class=\"row-flex justify-center align-items-center\") xxxx\n\n"
+    ]
+  },
+  "input":{
+    "prefix":"b-input",
+    "body": [
+      "\ninput(${type}, ${id}, ${name}, ${value})\n"
+    ]
+  },
+  "flip-card":{
+    "prefix":"b-flip-card",
+    "body": [
+      "\n-var questions= ['']\n-var answers= ['${unit}/${module}/'+namePage+'_img_${1}.png']\n+flipCard({questions, answers, type: 'img'})\n"
+    ]
+  },
+  "game-ballon":{
+    "prefix":"b-ballon",
+    "body": [
+      "\n.juego-globos#gameGlobos\n  .globos-inicio\n  .globos-header\n\t.cronometro\n\t\t| time:\n\t\tspan.globo-timer 0\n  .globos-section\n  .globos-footer\n\t.num\n\t.word-blank\n\t.word-check\n\t\t| Next\n\t\ti.fa.fa-check\n  .ganador\n  .perdedor\n+gameScripts([\"game_ballon/game_ballon.js\"])\n+gameStyles([\"game_ballon/game_ballon.css\"])\nscript.\n\tvar frases = [[],[]]\n\t$('#gameGlobos').game_ballon(frases);\n"
+    ]
+  },
+  "game-basket":{
+    "prefix":"b-basket",
+    "body": [
+      "\n+game_basket()\n+gameScripts([\"game_basket/game_basket.js\"])\n+gameStyles([\"game_basket/css/game_basket.css\"])\nscript.\n  $(document).ready(function () {\n    var verbos = {\n\t\t1: {\n\t\t\t1: ['', \"\"],\n\t\t},\n\t};\n\tbaloncesto(verbos);\n\t});\n"
+    ]
+  },
+  "game-hangman":{
+    "prefix":"b-basket",
+    "body": [
+      "\nng-init=\"juegoHangman({ 1:['Acting','unit_${unit}/module_${module}/assets/images/'+namePage+'_img_1.jpg'] }, 1, 'img', 4);\"\n+hangman({totalQuestions: 10})\n+gameScripts([\"game_hangman/game_hangman.js\"])\n+gameStyles(['game_hangman/game_hangmanMilitary-start.css'])\n"
+    ]
+  },
+  "game_completePhrase":{
+    "prefix":"b-complete-phrase",
+    "body": [
+      "\n+flickityBase\n\t+flickityControls(5)\n\t\t#gameCompletephrase.containerParachute\n+gameStyles([\"completePhrase/completePhrase.css\"])\n+gameScripts([\"completePhrase/completePhrase.js\"])\nscript.\n\tcompletePhrase(document.querySelector('#gameCompletephrase'), [''])\n\tfn_flickity_init();\n"
+    ]
+  },
+  "game_selectMatch":{
+    "prefix":"b-select-match",
+    "body": [
+      "\n.row\n\t.c-game-selectMatch#containerGame\n.row\n\t.col-center.xs12.sm10.md8\n\t\t.c-answers#containerAnswers(data-visible data-title-answers=\"Answers\")\n\n+gameScripts([\"game_selectMatch/index.js\"])\n+gameStyles([\"game_selectMatch/index.css\"])\nscript.\n\tlet container = document.getElementById('containerGame')\n\tlet contAnswer = document.getElementById('containerAnswers')\n\tlet dataGame = [{type: 'text',opts: ['']},{type: 'text',opts: ['']}]\n\tlet selectMatche_selectMatch(dataGame, container, 200, 80, contAnswer)\n\tselectMatch.init()\n"
+    ]
+  },
+  "rxSelect":{
+    "prefix":"b-rx-select",
+    "body": [
+      "\n.selectChanged_1\n\n//- Poner el boton si no esta button(class='c-btn-IconAction u-bgIconRefresh rxselect-clear')\n\n+gameStyles([\"game_rxSelect/dist/index.css\"])\n+gameScripts([\"game_rxSelect/dist/index.js\"])\n\nscript.\n\tconst listWords = [\"\"];\n\tconst xGame = new ReactiveSelect(\".selectChanged_1\", { group: 1, words: listWords, isDisabled: true});\n\tconst ResetGame = () => xGame.handleClearGame(\"all\")\n\tdocument.querySelector(\".rxselect-clear\").onclick = ResetGame\n"
+    ]
   }
 }
